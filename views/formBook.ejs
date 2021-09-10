@@ -1,0 +1,21 @@
+<%- include('./element/header') %>
+    <h1>Add Books</h1>
+    <form method="POST">
+        <label>title</label><br>
+        <input type="text" name="title" value="<%= book.title %>"><br>
+        <label>released_year</label><br>
+        <input type="number" name="released_year" value="<%= book.released_year %>"><br>
+        <label>author</label><br>
+        <input type="text" name="author" value="<%= book.author %>"><br>
+        <label>country</label><br>
+        <input type="text" name="country" value="<%= book.country %>"><br>
+        <label>language</label><br>
+        <input type="text" name="language" value="<%= book.language %>"><br>
+        <label>link</label><br>
+        <input type="text" name="link" value="<%= book.link %>"><br>
+        <label>pages</label><br>
+        <input type="number" name="pages" value="<%= book.pages %>"><br><br>
+        <input type="submit" value="add"><br>
+    </form>
+</body>
+</html>

@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayo Baca | Profiles</title>
-</head>
-<body>
+<%- include('./element/header') %>
     <h1>All Profiles</h1>
+    <a href="/profiles/add">add Profile</a>
     <table border="1">
         <thead>
             <th>no</th>
@@ -15,7 +8,7 @@
             <th>address</th>
             <th>gender</th>
             <th>age</th>
-            <th>action</th>
+            <th colspan="3">action</th>
         </thead>
         <tbody>
             <% profiles.forEach(profile => { %>
@@ -25,7 +18,9 @@
                     <td><%= profile.address %> </td>
                     <td><%= profile.gender %> </td>
                     <td><%= profile.age() %> </td>
-                    <td><a href="/profiles/<%= profile.id %>">see</a></td>
+                    <td><a href="/profiles/<%= profile.id %>">see point</a></td>
+                    <td><a href="/profiles/<%= profile.id %>/edit">edit</a></td>
+                    <td><a href="/profiles/<%= profile.id %>/delete">delete</a></td>
                 </tr>
             <% }) %> 
         </tbody>

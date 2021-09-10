@@ -1,0 +1,21 @@
+<%- include('./element/header') %>
+    <h1>Add Profile</h1>
+    <form method="POST">
+        <label>name</label><br>
+        <input type="text" name="name" value="<%= profile.name %>"><br>
+        <label>address</label><br>
+        <input type="text" name="address" value="<%= profile.address %>"><br>
+        <label>gender</label><br>
+        <input type="radio" name="gender" value="male" <%= profile.gender === 'male' ? "checked" : "" %> >male
+        <input type="radio" name="gender" value="female" <%= profile.gender === 'female' ? "checked" : "" %>>female
+        <br>
+        <label>birth_of_date</label><br>
+        <input type="date" name="birth_of_date" value="<%= profile.birth_of_date ? profile.dateBorn(profile.birth_of_date) : '' %>"><br>
+        <label>username</label><br>
+        <input type="text" name="username" value="<%= profile.username %>"><br>
+        <label>password</label><br>
+        <input type="password" name="password" value="<%= profile.password %>"><br>
+        <input type="submit" value="add"><br>
+    </form>
+</body>
+</html>

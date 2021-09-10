@@ -1,6 +1,6 @@
 class Controller{
     static home(req, res) {
-        res.send("Ayo Baca!")
+        res.send('"Ayo Baca!"')
     }
 }
 

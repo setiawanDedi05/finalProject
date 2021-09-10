@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => {
       return Math.floor((new Date() -  new Date(this.birth_of_date).getTime()) / 3.15576e+10 )
     }
 
+    dateBorn(date) {
+      return new Date(date).toISOString().split("T")[0]
+    }
+
     static associate(models) {
       // define association here
       Profile.hasMany(models.Borrowing, { foreignKey: 'ProfileId' })

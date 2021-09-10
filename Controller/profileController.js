@@ -1,4 +1,8 @@
-const {Profile, Point, sequelize} = require("../models/")
+const { Profile, Point, sequelize } = require("../models/")
+const fs = require("fs")
+const pdf = require("pdf-creator-node")
+const path = require("path")
+
 class ProfileController{
     static home(req, res) {
         Profile.findAll()
@@ -23,6 +27,59 @@ class ProfileController{
             })
             .catch(err => res.send(err))
         
+    }
+
+    static formAdd(req, res) {
+        res.render('formProfile', {
+            profile: {
+                name: '',
+                address: '',
+                gender: '',
+                birth_od_date: '',
+                username: '',
+                password: ''
+        }})
+    }
+
+    static addProfile(req, res) {
+        let data = req.body
+        Profile.create(data)
+            .then(() => {
+                res.redirect('/profiles')
+            })
+            .catch(err => res.send(err))
+    }
+
+    static formEdit(req, res) {
+        Profile.findByPk(req.params.id)
+            .then(profile => {
+                res.render('formProfile', {profile})
+            })
+            .catch(err => res.send(err))
+    }
+
+    static edit(req, res) {
+        Profile.update(req.body, {
+            where: {
+                id : +req.params.id
+            }
+        })
+            .then(() => {
+                res.redirect("/profiles")
+            })
+            .catch(err => res.send(err))
+    }
+
+    static destroy(req, res) {
+        Profile.destroy({
+            where: {
+                id:+req.params.id
+            }
+        })
+            .then(() => {
+                res.redirect('/profiles')
+            })
+            .catch(err => res.send(err))
     }
 
 }

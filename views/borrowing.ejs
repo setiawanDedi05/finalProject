@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayo Baca | Borrowing</title>
-</head>
-<body>
+<%- include('./element/header') %>
     <h1>All Borrowing</h1>
+    <a href="/borrowings/add">add borrow</a>
     <table border="1">
         <thead>
             <th>no</th>
@@ -34,7 +27,7 @@
                             <% } %>
                      </td>
                     <td><% if(!borrowing.status){ %>
-                            <a href="borrowings/<%= borrowing.id %>">return</a>
+                            <a href="/borrowings/<%= borrowing.id %>/returned">return</a>
                         <% } else { %>
                               returned
                         <% } %>

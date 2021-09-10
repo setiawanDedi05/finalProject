@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayo Baca | Books</title>
-</head>
-<body>
+<%- include('./element/header') %>
     <h1>All Books</h1>
+    <a href="/books/add">add books</a>
     <table border="1">
         <thead>
             <th>no</th>
@@ -16,7 +9,8 @@
             <th>country</th>
             <th>pages</th>
             <th>language</th>
-            <th>release year</th>
+            <th>release year</th> 
+            <th colspan="2">Action</th> 
         </thead>
         <tbody>
             <% books.forEach(book => { %>
@@ -28,6 +22,8 @@
                     <td><%= book.pages %> </td>
                     <td><%= book.language %> </td>
                     <td><%= book.released_year %> </td>
+                    <td><a href="/books/<%= book.id %>/edit">edit</a> </td>
+                    <td><a href="/books/<%= book.id %>/delete">delete</a> </td>
                 </tr>
             <% }) %> 
         </tbody>
