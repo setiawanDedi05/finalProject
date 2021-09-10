@@ -15,6 +15,8 @@
             <th>borrower</th>
             <th>date of borrow</th>
             <th>expired borrowing</th>
+            <th>status</th>
+            <th>action</th>
         </thead>
         <tbody>
             <% borrowings.forEach(borrowing => { %>
@@ -24,6 +26,19 @@
                     <td><%= borrowing.Profile.name %> </td>
                     <td><%= formatDate(borrowing.createdAt) %> </td>
                     <td><%= formatDate(borrowing.expiredBorrow()) %> </td>
+                    <td>
+                        <% if(!borrowing.status) { %>
+                            <%= borrowing.expiredBorrow() !== new Date() ? "Still Borrow" : "returned" %>
+                            <% }else{ %>
+                                returned
+                            <% } %>
+                     </td>
+                    <td><% if(!borrowing.status){ %>
+                            <a href="borrowings/<%= borrowing.id %>">return</a>
+                        <% } else { %>
+                              returned
+                        <% } %>
+                    </td>
                 </tr>
             <% }) %> 
         </tbody>

@@ -5,8 +5,8 @@ const router = require("./Routes")
 const formatDate = require("./helper/formatDate.js")
 
 app.set('view engine', 'ejs')
+app.use(express.static("public"))
 app.use(express.urlencoded({extended:true}))
-
 app.locals.formatDate = formatDate
 
 app.use('/', router)

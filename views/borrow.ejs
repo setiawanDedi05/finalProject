@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayo Baca | Borrow</title>
+</head>
+<body>
+    <h1>Form Borrow</h1>
+    <form method="POST">
+        <label>id profile</label>
+        <select name="ProfileId">
+            <% profiles.forEach(profile => { %>
+                <option value="<%= profile.id %>"><%= profile.name %> </option>
+            <% }) %> 
+        </select>
+        <label>id book</label>
+        <select name="BookId">
+            <% books.forEach(book => { %>
+                <option value="<%= book.id %>"><%= book.title %> </option>
+            <% }) %> 
+        </select>
+        <input type="submit" value="borrow">
+    </form>
+</body>
+</html>

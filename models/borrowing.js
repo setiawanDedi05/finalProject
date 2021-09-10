@@ -25,7 +25,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   Borrowing.init({
     ProfileId: DataTypes.INTEGER,
-    BookId: DataTypes.INTEGER
+    BookId: DataTypes.INTEGER,
+    status : DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Borrowing',

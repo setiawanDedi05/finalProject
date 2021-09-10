@@ -1,10 +1,12 @@
 [
     {
         "ProfileId" : 1,
-        "BookId" : 2
+        "BookId" : 2,
+        "status" : false
     },
     {
         "ProfileId" : 2,
-        "BookId" : 20
+        "BookId" : 20,
+        "status" : false
     }
 ]

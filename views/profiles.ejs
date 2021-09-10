@@ -15,6 +15,7 @@
             <th>address</th>
             <th>gender</th>
             <th>age</th>
+            <th>action</th>
         </thead>
         <tbody>
             <% profiles.forEach(profile => { %>
@@ -24,6 +25,7 @@
                     <td><%= profile.address %> </td>
                     <td><%= profile.gender %> </td>
                     <td><%= profile.age() %> </td>
+                    <td><a href="/profiles/<%= profile.id %>">see</a></td>
                 </tr>
             <% }) %> 
         </tbody>
