@@ -9,13 +9,22 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
+    static getPoint(id) {
+      return Point.sum('point', {
+        where: {
+          ProfileId: id
+        }
+      })
+    }
+    
     static associate(models) {
       // define association here
+      Point.belongsTo(models.Profile, {foreignKey:'ProfileId'})
     }
   };
   Point.init({
     point: DataTypes.INTEGER,
-    ProfilId: DataTypes.INTEGER
+    ProfileId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Point',

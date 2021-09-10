@@ -11,9 +11,9 @@ module.exports = {
       point: {
         type: Sequelize.INTEGER
       },
-      ProfilId: {
+      ProfileId: {
         type: Sequelize.INTEGER,
-        reference : {
+        references : {
           model : 'Profiles',
           key : 'id'
         }

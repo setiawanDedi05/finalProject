@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayo Baca | Borrowing</title>
+</head>
+<body>
+    <h1>All Borrowing</h1>
+    <table border="1">
+        <thead>
+            <th>no</th>
+            <th>title</th>
+            <th>borrower</th>
+            <th>date of borrow</th>
+            <th>expired borrowing</th>
+        </thead>
+        <tbody>
+            <% borrowings.forEach(borrowing => { %>
+                <tr>
+                    <td><%= borrowing.id %> </td>
+                    <td><%= borrowing.Book.title %> </td>
+                    <td><%= borrowing.Profile.name %> </td>
+                    <td><%= formatDate(borrowing.createdAt) %> </td>
+                    <td><%= formatDate(borrowing.expiredBorrow()) %> </td>
+                </tr>
+            <% }) %> 
+        </tbody>
+    </table>
+</body>
+</html>

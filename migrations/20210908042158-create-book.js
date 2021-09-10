@@ -11,7 +11,7 @@ module.exports = {
       author: {
         type: Sequelize.STRING
       },
-      country :{
+      country:{
         type : Sequelize.STRING
       },
       imageLink : {

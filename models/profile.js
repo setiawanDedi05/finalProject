@@ -9,8 +9,14 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
+    age() {
+      return Math.floor((new Date() -  new Date(this.birth_of_date).getTime()) / 3.15576e+10 )
+    }
+
     static associate(models) {
       // define association here
+      Profile.hasMany(models.Borrowing, { foreignKey: 'ProfileId' })
+      Profile.hasMany(models.Point, {foreignKey:"ProfileId"})
     }
   };
   Profile.init({

@@ -1,0 +1,18 @@
+[
+    {
+        "name" : "Dedi Setiawan",
+        "address" : "Cianjur",
+        "gender" : "Male",
+        "birth_of_date" : "25-12-1994",
+        "username" : "dedi05",
+        "password" : "dedi05"
+    },
+    {
+        "name" : "Maulana Yusuf Azmi",
+        "address" : "Brebes",
+        "gender" : "Male",
+        "birth_of_date" : "14-09-1991",
+        "username" : "azmi01",
+        "password" : "azmi01"
+    }
+]

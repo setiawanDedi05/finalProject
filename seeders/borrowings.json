@@ -1,0 +1,10 @@
+[
+    {
+        "ProfileId" : 1,
+        "BookId" : 2
+    },
+    {
+        "ProfileId" : 2,
+        "BookId" : 20
+    }
+]
