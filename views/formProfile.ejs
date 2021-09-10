@@ -1,4 +1,5 @@
 <%- include('./element/header') %>
+<%- include('./element/menu') %>
     <h1>Add Profile</h1>
     <form method="POST">
         <label>name</label><br>
@@ -17,5 +18,4 @@
         <input type="password" name="password" value="<%= profile.password %>"><br>
         <input type="submit" value="add"><br>
     </form>
-</body>
-</html>
+<%- include('./element/footer') %>

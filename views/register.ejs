@@ -1,23 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-    <% if(error) {%>
-        <h3><%= error %></h3>
-    <% } %>
-
-    <form method="post">
-        <input type="text" name="uname" id="">
-        <input type="text" name="upass" id="">
-        <button type="submit">Register</button>
+<%- include('./element/header') %>
+    <h1>Add Profile</h1>
+    <form method="POST">
+        <label>name</label><br>
+        <input type="text" name="name" value="<%= profile.name %>"><br>
+        <label>address</label><br>
+        <input type="text" name="address" value="<%= profile.address %>"><br>
+        <label>gender</label><br>
+        <input type="radio" name="gender" value="male" <%= profile.gender === 'male' ? "checked" : "" %> >male
+        <input type="radio" name="gender" value="female" <%= profile.gender === 'female' ? "checked" : "" %>>female
+        <br>
+        <label>birth_of_date</label><br>
+        <input type="date" name="birth_of_date" value="<%= profile.birth_of_date ? profile.dateBorn(profile.birth_of_date) : '' %>"><br>
+        <label>username</label><br>
+        <input type="text" name="username" value="<%= profile.username %>"><br>
+        <label>password</label><br>
+        <input type="hidden" name="class" value="admin">
+        <input type="password" name="password" value="<%= profile.password %>"><br>
+        <input type="submit" value="add"><br>
     </form>
-
-    <a href="/">Back to Home</a>
-</body>
-</html>
+<%- include('./element/footer') %>

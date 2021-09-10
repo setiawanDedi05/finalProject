@@ -5,7 +5,8 @@
         "gender" : "Male",
         "birth_of_date" : "1994-12-25",
         "username" : "dedi05",
-        "password" : "dedi05"
+        "password" : "$2a$10$/OgDuFCRABEavDHa2KuSzOf..miephhDnfun1REACALkrluRYRgPy",
+        "class" : "admin"
     },
     {
         "name" : "Maulana Yusuf Azmi",
@@ -13,6 +14,7 @@
         "gender" : "Male",
         "birth_of_date" : "1994-09-14",
         "username" : "azmi01",
-        "password" : "azmi01"
+        "password" : "$2a$10$ywccmHC6B3H7uqX9puxqZuitrQuSeyC0objNRmLQvp0uwfMCN5Kw2",
+        "class" : "user"
     }
 ]
